@@ -1,0 +1,23 @@
+[user]
+	email = gonzalovazquez010@gmail.com
+	name = gonzalovazquez
+[core]
+	editor = code --new-window --wait
+[diff]
+	tool = vscode
+[merge]
+	tool = vscode
+[alias]
+	lg = ! git log --oneline --graph --color | emojify | less
+	cp = ! git rev-parse HEAD | tr -d '\\r' | pbcopy
+	wip = ! git add -A && git commit -m \":construction: WIP\"
+	empty = ! git commit --allow-empty -m \":ghost: Empty commit\"
+	rb  = "! _rebase() { git checkout $1 && git pull --rebase && git checkout - && git rebase -i $1; }; _rebase"
+	br = "! _branch() { git checkout $1 && git pull --rebase && git checkout -b $2; }; _branch"
+	fubar = ! git reset --hard && git clean -fd
+	sdiff = ! git diff --cached
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

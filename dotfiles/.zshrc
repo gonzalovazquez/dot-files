@@ -1,11 +1,40 @@
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/gv/.oh-my-zsh
+# UTF
+export LANG="en_US.UTF-8"
+export LC_COLLATE="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LC_MESSAGES="en_US.UTF-8"
+export LC_MONETARY="en_US.UTF-8"
+export LC_NUMERIC="en_US.UTF-8"
+export LC_TIME="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="mh"
+
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Custom
+alias valhalla='ssh gonzalovazquez@mstsrv.ca'
+alias datalake='ssh x208072@qcr-hadoop-e001.oss.ads'
+alias inspect='node --inspect --inspect-brk ./node_modules/jest/bin/jest.js'
+alias find-port='lsof -i tcp:'
+alias localip="ipconfig getifaddr en0"
+alias h="history"
+alias weather='curl -4 http://wttr.in/Toronto'
+
+# Add nvm to user
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/gonzalovazquez/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="spaceship"
+
+# Disable r (re-run last time)
+disable r
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -49,14 +78,13 @@ ZSH_THEME="mh"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git osx battery)
-
-# User configuration
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-# export MANPATH="/usr/local/man:$MANPATH"
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -68,11 +96,12 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -83,34 +112,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Github
-alias gs='git status '
-alias ga='git add '
-alias gb='git branch '
-alias gc='git commit'
-alias gd='git diff'
-alias go='git checkout '
-alias gk='gitk --all&'
-alias gx='gitx --all'
+# Androud Configurations
+export ANDROID_HOME=${HOME}/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 
-# Easier navigation: .., ..., ...., ....., ~ and -
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."
-alias ~="cd ~" # `cd` is probably faster to type though
-alias -- -="cd -"
+# Export Go
+export GOPATH=$HOME/Projects/experiments/playing-with-go
 
-# Shortcuts
-alias d="cd ~/Dropbox"
-alias dl="cd ~/Downloads"
-alias dt="cd ~/Desktop"
-alias p="cd ~/Projects"
-alias g="git"
-alias h="history"
-alias j="jobs"
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/gonzalovazquez/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/gonzalovazquez/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
-# Customs
-alias clr="clear"
-
-export PATH="$PATH:$HOME/.yarn/bin"
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/gonzalovazquez/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/gonzalovazquez/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
