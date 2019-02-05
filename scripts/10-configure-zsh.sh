@@ -10,7 +10,9 @@ if [[ ! -d ~/.oh-my-zsh ]]; then
   git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 fi
 
-if [[ ! -a ~/.zshrc ]]; then
-  echo "Configuring zsh..."
-  ln -s ~/.laptop/dotfiles/.zshrc ~/.zshrc
-fi
+echo "Configuring zsh..."
+rm ~/.zshrc
+git clone git://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+cp ~/.laptop/dotfiles/.zshrc ~/.zshrc
+source ~/.zshrc
