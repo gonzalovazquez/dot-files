@@ -70,6 +70,8 @@ brew "yubico-piv-tool"
 brew "z"
 brew "zsh"
 brew "nvm"
+brew "pipenv"
+brew cask install now
 cask "android-platform-tools"
 cask "caprine"
 cask "coconutbattery"

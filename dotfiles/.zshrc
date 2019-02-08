@@ -8,16 +8,20 @@ export LC_NUMERIC="en_US.UTF-8"
 export LC_TIME="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
+# PIPENV
+export PIPENV_VENV_IN_PROJECT=1
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# USER
+user=$(whoami)
 # Add nvm to user
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/gonzalovazquez/.oh-my-zsh
+export ZSH="/Users/$user/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -40,7 +44,7 @@ source $ZSH/oh-my-zsh.sh
 # Alias
 alias show_hidden_files="defaults write com.apple.finder AppleShowAllFiles YES"
 alias hide_hidden_files="defaults write com.apple.finder AppleShowAllFiles NO"
-alias valhalla='ssh gonzalovazquez@mstsrv.ca'
+alias valhalla='ssh server.gonzalovazquez@gonzalovazquez.ca'
 alias datalake='ssh x208072@qcr-hadoop-e001.oss.ads'
 alias inspect='node --inspect --inspect-brk ./node_modules/jest/bin/jest.js'
 alias find-port='lsof -i tcp:'
@@ -58,7 +62,7 @@ export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 export GOPATH=$HOME/Projects/experiments/playing-with-go
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/gonzalovazquez/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/gonzalovazquez/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/Users/$user/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/$user/Downloads/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/gonzalovazquez/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/gonzalovazquez/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/$user/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/$user/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
