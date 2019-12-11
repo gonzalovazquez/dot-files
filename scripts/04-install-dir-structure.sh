@@ -9,7 +9,7 @@
 #   None noted
 #
 
-cd ~/Downloads
+cd ~
 mkdir src
 cd src
 
