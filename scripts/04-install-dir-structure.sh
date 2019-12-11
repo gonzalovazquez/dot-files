@@ -17,14 +17,16 @@ cd src
 mkdir Xcode build-to-learn orgs projects test
 
 # Create common orgs
-cd ~/Downloads/src/orgs
+cd ~/src/orgs
 mkdir gonzalovazquez usmakestwo beyondinsights
 
 # Create test languages
 declare -a languages=("bash" "docker" "c#" "clojure" "go" "haskell" "js" "lisp" "python" "react" "ruby" "terraform" "ts")
 test="-test"
-cd ~/Downloads/src/test
+cd ~/src/test
 for i in "${languages[@]}"
 do
     mkdir ${i}${test}
 done
+
+echo "Development structure created."
